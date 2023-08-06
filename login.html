@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login and Registration Form</title>
+    <style>/* Add your CSS styles here */
+    /* Add your CSS styles here */
+
+.form-container {
+  width: 50%;
+  margin: 0 auto;
+  color: aqua;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color:cyan
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+input[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+.error {
+  color: red;
+  margin-top: 5px;
+}
+
+    </style>
+  </head>
+  <body background="https://th.bing.com/th/id/R.bf8dc5c2d69ed657cd312f35bb27f0d4?rik=K4xTfkI7Tw8iYg&riu=http%3a%2f%2fdecoholic.org%2fwp-content%2fuploads%2f2013%2f03%2famazing-2-house-interior-design.jpg&ehk=RhHkqguWKBvhMsE51Iifxv1x0miEnaL33TpXAJjkA34%3d&risl=&pid=ImgRaw&r=0">
+    <br><br><br><br>
+    <div class="form-container">
+      <h2>Login</h2>
+      <form id="login-form" method="post" action="">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <input type="submit" value="Login">
+      </form>
+
+      <h2>Register</h2>
+      <form id="register-form" method="post" action="">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <label for="confirm-password">Confirm Password:</label>
+        <input type="password" id="confirm-password" name="confirm-password" required>
+
+        <input type="submit" value="Register">
+      </form>
+    </div>
+    <script>
+      // Add your JavaScript validation code here
+const loginForm = document.getElementById('login-form');
+const registerForm = document.getElementById('register-form');
+
+loginForm.addEventListener('submit', function(event) {
+  const username = loginForm.elements['username'].value.trim();
+  const password = loginForm.elements['password'].value.trim();
+
+  if (username === '') {
+    event.preventDefault();
+    showError('Username is required.', loginForm);
+  }
+
+  if (password === '') {
+    event.preventDefault();
+    showError('Password is required.', loginForm);
+  }
+});
+
+registerForm.addEventListener('submit'), function(event) {
+  const username = registerForm.elements['username'].value.trim();
+  const password = registerForm.elements['password'].value.trim();
+  const confirmPassword = registerForm.elements['confirm-password'].value.trim();
+}
+  if (username === '') {
+    event.preventDefault();
+    showError('Username is required.', registerForm);
+  }
+
+  if (password === '') {
+    event.preventDefault();
+    showError('Password is required.', registerForm);
+  }
+
+  if (confirmPassword === '') {
+    event.preventDefault();
+    showError('Confirm Password is required.', registerForm);
+  }
+      
+    </script>
+  </body>
+</html>
